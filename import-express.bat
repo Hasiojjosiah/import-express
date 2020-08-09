@@ -15,10 +15,8 @@ echo.
 for /L %%i in (1,1,%n%) do call set /P %%array[%%i]%%=%%array[%%i]%% Database File Path: 
 echo Dropping Databases...
 echo.
-
 for /L %%i in (1,1,%n%) do call C:\wamp64\bin\mysql\mysql8.0.18\bin\mysqladmin -u root -h localhost -P 3308 drop if exist %%array[%%i]%%  -f
 echo Creating Databases...
-
 for /L %%i in (1,1,%n%) do call echo Creating  %%array[%%i]%% Database... & call C:\wamp64\bin\mysql\mysql8.0.18\bin\mysqladmin -u root -h localhost -P 3308 create %%array[%%i]%% -f 
 
 echo.
